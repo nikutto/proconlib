@@ -4,9 +4,12 @@
 
 namespace Geometry{
     bool isis_ll(Line x,Line y){
-        return !EQ(cross(x.a-x.b,y.a-y.b),ld(0));
+        return abs(cross(x.a-x.b,y.a-y.b))>EPS;
     }
 
+    bool isis_sp(Line x,Point p){
+        return abs(x.a-p)+abs(x.b-p)-abs(x.a-x.b)<EPS;
+    }
     bool isis_ss(Line x,Line y){
         return ccw(x.a,x.b,y.a)*ccw(x.a,x.b,y.b)<=0 && ccw(y.a,y.b,x.a)*ccw(y.a,y.b,x.b)<=0;
     }
@@ -16,7 +19,7 @@ namespace Geometry{
     }
 
     Point is_ll(Line x,Line y){
-        return x.a+(x.b-x.a)*abs(cross(x.a-y.a,y.b-y.a))/abs(cross(x.b-x.a,y.b-y.a));
+        return x.a+(x.b-x.a)*cross(x.a-y.a,y.b-y.a)/cross(x.b-x.a,y.b-y.a);
     }
 
     Point proj(Line l,Point p){
