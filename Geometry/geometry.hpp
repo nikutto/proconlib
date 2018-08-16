@@ -1,22 +1,33 @@
 #include<complex>
+namespace Geometry{
+    using namespace std;
+    using ld=long double;
+    using Point=complex<ld>;
 
-using namespace std;
-using ld=long double;
-using P=complex<ld>;
+    struct Line{
+        Point a,b;
+    };
 
-struct Line{
-    P a,b;
-};
-const ld EPS=1e-6;
-inline bool EQ(P a,P b){return abs(a-b)<EPS;}
-ld dot(P a,P b){return real(a)*real(b)+imag(a)*imag(b);}
-ld cross(P a,P b){return real(a)*imag(b)-imag(a)*real(b);}
+    struct Circle{
+        Point p;
+        ld r;
+    };
+    const ld EPS=1e-6;
+    inline bool EQ(Point a,Point b){return abs(a-b)<EPS;}
+    ld dot(Point a,Point b){return real(a)*real(b)+imag(a)*imag(b);}
+    ld cross(Point a,Point b){return real(a)*imag(b)-imag(a)*real(b);}
 
-int ccw(P a,P b,P c){
-    b-=a,c-=a;
-    if(cross(b,c)>EPS) return 1; // counter clockwise
-    if(cross(b,c)<-EPS) return -1; //clockwise
-    if(dot(b,c)<-EPS) return 2; //c-a-b
-    if(abs(b)<abs(c)) return -2; //a-c-b
-    return 0; //a-b-c (abs(b)>abs(c))
+    const int CCW=1;
+    const int CW=-1;
+    const int BAC=2;
+    const int ACB=-2;
+    const int ABC=0;
+    int ccw(Point a,Point b,Point c){
+        b-=a,c-=a;
+        if(cross(b,c)>EPS) return CCW; // counter clockwise
+        if(cross(b,c)<-EPS) return CW; //clockwise
+        if(dot(b,c)<-EPS) return BAC; //b-a-c
+        if(abs(b)<abs(c)) return ACB; //a-c-b
+        return ABC; //a-b-c (abs(b)>abs(c))
+    }
 }
