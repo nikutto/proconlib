@@ -119,13 +119,14 @@ namespace Geometry{
         }
         if(abs(c1.r-c0.r)>EPS){
             Point om=(-c0.p*c1.r+c1.p*c0.r)/(c0.r-c1.r);
-            res=tangent_cp(c0,om);
+            auto ret=tangent_cp(c0,om);
+            res.insert(res.end(),ret.begin(),ret.end());
         }
         else{
             Point v=c1.p-c0.p;
             ld d=abs(v);
-            Point p0=v*Point(0,c0.r/d);
-            Point p1=v*Point(0,-c0.r/d);
+            Point p0=c0.p+v*Point(0,c0.r/d);
+            Point p1=c0.p+v*Point(0,-c0.r/d);
             res.push_back(Line{p0,p0+v});
             res.push_back(Line{p1,p1+v});
         }        

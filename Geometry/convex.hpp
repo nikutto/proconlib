@@ -5,6 +5,7 @@
 namespace Geometry{
     vector<Point> convexFull(const vector<Point>& ps){
         int n=ps.size();
+        if(n<=1) return ps;
         auto cmp=[](const Point &lhs,const Point &rhs){
             return real(lhs)==real(rhs) ? imag(lhs)<imag(rhs) : real(lhs)<real(rhs);
         };
