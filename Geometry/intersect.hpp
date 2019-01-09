@@ -19,7 +19,7 @@ namespace Geometry{
     }
 
     Point is_ll(Line x,Line y){
-        return x.a+(x.b-x.a)*cross(x.a-y.a,y.b-y.a)/cross(x.b-x.a,y.b-y.a);
+        return x.a+(x.b-x.a)*cross(y.b-x.a,y.b-y.a)/cross(x.b-x.a,y.b-y.a);
     }
 
     Point proj(Line l,Point p){
