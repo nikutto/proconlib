@@ -1,0 +1,606 @@
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp: In instantiation of 'ProconLib::Matrix<T> ProconLib::gaussianElimination(ProconLib::Matrix<T>) [with T = double; Detail = ProconLib::Detail<double>]':
+matrixTest.cpp:36:28:   required from here
+../matrix.cpp:160:30: error: 'swap' was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/bits/nested_exception.h:40:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/exception:143,
+                 from C:/msys64/mingw64/include/c++/7.2.0/ios:39,
+                 from C:/msys64/mingw64/include/c++/7.2.0/istream:38,
+                 from C:/msys64/mingw64/include/c++/7.2.0/sstream:38,
+                 from C:/msys64/mingw64/include/c++/7.2.0/complex:45,
+                 from C:/msys64/mingw64/include/c++/7.2.0/ccomplex:39,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:52,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/move.h:187:5: note: 'template<class _Tp> typename std::enable_if<std::__and_<std::__not_<std::__is_tuple_like<_Tp> >, std::is_move_constructible<_Tp>, std::is_move_assignable<_Tp> >::value>::type std::swap(_Tp&, _Tp&)' declared here, later in the translation unit
+     swap(_Tp& __a, _Tp& __b)
+     ^~~~
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: error: no matching function for call to 'swap(ProconLib::Vector<double>&, ProconLib::Vector<double>&)'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/complex:45:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/ccomplex:39,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:52,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/sstream:783:5: note: candidate: template<class _CharT, class _Traits, class _Allocator> void std::__cxx11::swap(std::__cxx11::basic_stringbuf<_CharT, _Traits, _Alloc>&, std::__cxx11::basic_stringbuf<_CharT, _Traits, _Alloc>&)
+     swap(basic_stringbuf<_CharT, _Traits, _Allocator>& __x,
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/sstream:783:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::__cxx11::basic_stringbuf<_CharT, _Traits, _Alloc>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/complex:45:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/ccomplex:39,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:52,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/sstream:790:5: note: candidate: template<class _CharT, class _Traits, class _Allocator> void std::__cxx11::swap(std::__cxx11::basic_istringstream<_CharT, _Traits, _Allocator>&, std::__cxx11::basic_istringstream<_CharT, _Traits, _Allocator>&)
+     swap(basic_istringstream<_CharT, _Traits, _Allocator>& __x,
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/sstream:790:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::__cxx11::basic_istringstream<_CharT, _Traits, _Allocator>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/complex:45:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/ccomplex:39,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:52,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/sstream:797:5: note: candidate: template<class _CharT, class _Traits, class _Allocator> void std::__cxx11::swap(std::__cxx11::basic_ostringstream<_CharT, _Traits, _Allocator>&, std::__cxx11::basic_ostringstream<_CharT, _Traits, _Allocator>&)
+     swap(basic_ostringstream<_CharT, _Traits, _Allocator>& __x,
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/sstream:797:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::__cxx11::basic_ostringstream<_CharT, _Traits, _Allocator>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/complex:45:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/ccomplex:39,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:52,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/sstream:804:5: note: candidate: template<class _CharT, class _Traits, class _Allocator> void std::__cxx11::swap(std::__cxx11::basic_stringstream<_CharT, _Traits, _Allocator>&, std::__cxx11::basic_stringstream<_CharT, _Traits, _Allocator>&)
+     swap(basic_stringstream<_CharT, _Traits, _Allocator>& __x,
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/sstream:804:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::__cxx11::basic_stringstream<_CharT, _Traits, _Allocator>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/regex:62:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:110,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/regex.h:807:5: note: candidate: template<class _Ch_type, class _Rx_traits> void std::__cxx11::swap(std::__cxx11::basic_regex<_Ch_type, _Rx_traits>&, std::__cxx11::basic_regex<_Ch_type, _Rx_traits>&)
+     swap(basic_regex<_Ch_type, _Rx_traits>& __lhs,
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/regex.h:807:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::__cxx11::basic_regex<_Ch_type, _Rx_traits>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/regex:62:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:110,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/regex.h:1960:5: note: candidate: template<class _Bi_iter, class _Alloc> void std::__cxx11::swap(std::__cxx11::match_results<_BiIter, _Alloc>&, std::__cxx11::match_results<_BiIter, _Alloc>&)
+     swap(match_results<_Bi_iter, _Alloc>& __lhs,
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/regex.h:1960:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::__cxx11::match_results<_BiIter, _Alloc>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:122:0,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/shared_mutex:678:5: note: candidate: template<class _Mutex> void std::swap(std::shared_lock<_Mutex>&, std::shared_lock<_Mutex>&)
+     swap(shared_lock<_Mutex>& __x, shared_lock<_Mutex>& __y) noexcept
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/shared_mutex:678:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::shared_lock<_Mutex>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/unordered_set:48:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:118,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/unordered_set.h:1528:5: note: candidate: template<class _Value, class _Hash, class _Pred, class _Alloc> void std::swap(std::unordered_multiset<_Value, _Hash, _Pred, _Alloc>&, std::unordered_multiset<_Value, _Hash, _Pred, _Alloc>&)
+     swap(unordered_multiset<_Value, _Hash, _Pred, _Alloc>& __x,
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/unordered_set.h:1528:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::unordered_multiset<_Value, _Hash, _Pred, _Alloc>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/unordered_set:48:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:118,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/unordered_set.h:1521:5: note: candidate: template<class _Value, class _Hash, class _Pred, class _Alloc> void std::swap(std::unordered_set<_Value, _Hash, _Pred, _Alloc>&, std::unordered_set<_Value, _Hash, _Pred, _Alloc>&)
+     swap(unordered_set<_Value, _Hash, _Pred, _Alloc>& __x,
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/unordered_set.h:1521:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::unordered_set<_Value, _Hash, _Pred, _Alloc>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/unordered_map:48:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:117,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/unordered_map.h:1882:5: note: candidate: template<class _Key, class _Tp, class _Hash, class _Pred, class _Alloc> void std::swap(std::unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>&, std::unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>&)
+     swap(unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/unordered_map.h:1882:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/unordered_map:48:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:117,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/unordered_map.h:1875:5: note: candidate: template<class _Key, class _Tp, class _Hash, class _Pred, class _Alloc> void std::swap(std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>&, std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>&)
+     swap(unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/unordered_map.h:1875:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:105:0,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/future:1579:5: note: candidate: template<class _Res, class ... _ArgTypes> void std::swap(std::packaged_task<_Res(_ArgTypes ...)>&, std::packaged_task<_Res(_ArgTypes ...)>&)
+     swap(packaged_task<_Res(_ArgTypes...)>& __x,
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/future:1579:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::packaged_task<_Res(_ArgTypes ...)>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:105:0,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/future:1144:5: note: candidate: template<class _Res> void std::swap(std::promise<_Res>&, std::promise<_Res>&)
+     swap(promise<_Res>& __x, promise<_Res>& __y) noexcept
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/future:1144:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::promise<_Res>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/future:39:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:105,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/thread:266:3: note: candidate: void std::swap(std::thread&, std::thread&)
+   swap(thread& __x, thread& __y) noexcept
+   ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/thread:266:3: note:   no known conversion for argument 1 from 'ProconLib::Vector<double>' to 'std::thread&'
+In file included from C:/msys64/mingw64/include/c++/7.2.0/forward_list:38:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:104,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/forward_list.h:1427:5: note: candidate: template<class _Tp, class _Alloc> void std::swap(std::forward_list<_Tp, _Alloc>&, std::forward_list<_Tp, _Alloc>&)
+     swap(forward_list<_Tp, _Alloc>& __lx,
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/forward_list.h:1427:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::forward_list<_Tp, _Alloc>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/condition_variable:39:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:103,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/std_mutex.h:363:5: note: candidate: template<class _Mutex> void std::swap(std::unique_lock<_Mutex>&, std::unique_lock<_Mutex>&)
+     swap(unique_lock<_Mutex>& __x, unique_lock<_Mutex>& __y) noexcept
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/std_mutex.h:363:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::unique_lock<_Mutex>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/stack:61:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:89,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_stack.h:347:5: note: candidate: template<class _Tp, class _Seq> typename std::enable_if<std::__is_swappable<_T2>::value>::type std::swap(std::stack<_Tp, _Seq>&, std::stack<_Tp, _Seq>&)
+     swap(stack<_Tp, _Seq>& __x, stack<_Tp, _Seq>& __y)
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_stack.h:347:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::stack<_Tp, _Seq>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/set:62:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:87,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_multiset.h:948:5: note: candidate: template<class _Key, class _Compare, class _Alloc> void std::swap(std::multiset<_Key, _Compare, _Alloc>&, std::multiset<_Key, _Compare, _Alloc>&)
+     swap(multiset<_Key, _Compare, _Alloc>& __x,
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_multiset.h:948:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::multiset<_Key, _Compare, _Alloc>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/set:61:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:87,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_set.h:965:5: note: candidate: template<class _Key, class _Compare, class _Alloc> void std::swap(std::set<_Key, _Compare, _Alloc>&, std::set<_Key, _Compare, _Alloc>&)
+     swap(set<_Key, _Compare, _Alloc>& __x, set<_Key, _Compare, _Alloc>& __y)
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_set.h:965:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::set<_Key, _Compare, _Alloc>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/queue:64:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:86,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_queue.h:668:5: note: candidate: template<class _Tp, class _Sequence, class _Compare> typename std::enable_if<std::__and_<std::__is_swappable<_T2>, std::__is_swappable<_Compare> >::value>::type std::swap(std::priority_queue<_Tp, _Sequence, _Compare>&, std::priority_queue<_Tp, _Sequence, _Compare>&)
+     swap(priority_queue<_Tp, _Sequence, _Compare>& __x,
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_queue.h:668:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::priority_queue<_Tp, _Sequence, _Compare>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/queue:64:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:86,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_queue.h:372:5: note: candidate: template<class _Tp, class _Seq> typename std::enable_if<std::__is_swappable<_T2>::value>::type std::swap(std::queue<_Tp, _Seq>&, std::queue<_Tp, _Seq>&)
+     swap(queue<_Tp, _Seq>& __x, queue<_Tp, _Seq>& __y)
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_queue.h:372:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::queue<_Tp, _Seq>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/vector:65:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/queue:61,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:86,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_bvector.h:128:3: note: candidate: void std::swap(bool&, std::_Bit_reference)
+   swap(bool& __x, _Bit_reference __y) noexcept
+   ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_bvector.h:128:3: note:   no known conversion for argument 1 from 'ProconLib::Vector<double>' to 'bool&'
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_bvector.h:120:3: note: candidate: void std::swap(std::_Bit_reference, bool&)
+   swap(_Bit_reference __x, bool& __y) noexcept
+   ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_bvector.h:120:3: note:   no known conversion for argument 1 from 'ProconLib::Vector<double>' to 'std::_Bit_reference'
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_bvector.h:112:3: note: candidate: void std::swap(std::_Bit_reference, std::_Bit_reference)
+   swap(_Bit_reference __x, _Bit_reference __y) noexcept
+   ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_bvector.h:112:3: note:   no known conversion for argument 1 from 'ProconLib::Vector<double>' to 'std::_Bit_reference'
+In file included from C:/msys64/mingw64/include/c++/7.2.0/vector:64:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/queue:61,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:86,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_vector.h:1644:5: note: candidate: template<class _Tp, class _Alloc> void std::swap(std::vector<_Tp, _Alloc>&, std::vector<_Tp, _Alloc>&)
+     swap(vector<_Tp, _Alloc>& __x, vector<_Tp, _Alloc>& __y)
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_vector.h:1644:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::vector<_Tp, _Alloc>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/memory:81:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:82,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/shared_ptr.h:595:5: note: candidate: template<class _Tp> void std::swap(std::weak_ptr<_Tp>&, std::weak_ptr<_Tp>&)
+     swap(weak_ptr<_Tp>& __a, weak_ptr<_Tp>& __b) noexcept
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/shared_ptr.h:595:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::weak_ptr<_Tp>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/memory:81:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:82,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/shared_ptr.h:474:5: note: candidate: template<class _Tp> void std::swap(std::shared_ptr<_Tp>&, std::shared_ptr<_Tp>&)
+     swap(shared_ptr<_Tp>& __a, shared_ptr<_Tp>& __b) noexcept
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/shared_ptr.h:474:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::shared_ptr<_Tp>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/bits/shared_ptr.h:52:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/memory:81,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:82,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/shared_ptr_base.h:1741:5: note: candidate: template<class _Tp, __gnu_cxx::_Lock_policy _Lp> void std::swap(std::__weak_ptr<_Tp, _Lp>&, std::__weak_ptr<_Tp, _Lp>&)
+     swap(__weak_ptr<_Tp, _Lp>& __a, __weak_ptr<_Tp, _Lp>& __b) noexcept
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/shared_ptr_base.h:1741:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::__weak_ptr<_Tp, _Lp>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/bits/shared_ptr.h:52:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/memory:81,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:82,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/shared_ptr_base.h:1533:5: note: candidate: template<class _Tp, __gnu_cxx::_Lock_policy _Lp> void std::swap(std::__shared_ptr<_Tp, _Lp>&, std::__shared_ptr<_Tp, _Lp>&)
+     swap(__shared_ptr<_Tp, _Lp>& __a, __shared_ptr<_Tp, _Lp>& __b) noexcept
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/shared_ptr_base.h:1533:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::__shared_ptr<_Tp, _Lp>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/map:62:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:81,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_multimap.h:1097:5: note: candidate: template<class _Key, class _Tp, class _Compare, class _Alloc> void std::swap(std::multimap<_Key, _Tp, _Compare, _Alloc>&, std::multimap<_Key, _Tp, _Compare, _Alloc>&)
+     swap(multimap<_Key, _Tp, _Compare, _Alloc>& __x,
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_multimap.h:1097:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::multimap<_Key, _Tp, _Compare, _Alloc>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/map:61:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:81,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_map.h:1432:5: note: candidate: template<class _Key, class _Tp, class _Compare, class _Alloc> void std::swap(std::map<_Key, _Tp, _Compare, _Alloc>&, std::map<_Key, _Tp, _Compare, _Alloc>&)
+     swap(map<_Key, _Tp, _Compare, _Alloc>& __x,
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_map.h:1432:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::map<_Key, _Tp, _Compare, _Alloc>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/map:60:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:81,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_tree.h:1581:5: note: candidate: template<class _Key, class _Val, class _KeyOfValue, class _Compare, class _Alloc> void std::swap(std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>&, std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>&)
+     swap(_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>& __x,
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_tree.h:1581:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/list:63:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:79,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_list.h:1949:5: note: candidate: template<class _Tp, class _Alloc> void std::swap(std::__cxx11::list<_Tp, _Alloc>&, std::__cxx11::list<_Tp, _Alloc>&)
+     swap(list<_Tp, _Alloc>& __x, list<_Tp, _Alloc>& __y)
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_list.h:1949:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::__cxx11::list<_Tp, _Alloc>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/bits/locale_conv.h:41:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/locale:43,
+                 from C:/msys64/mingw64/include/c++/7.2.0/iomanip:43,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:72,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/unique_ptr.h:676:5: note: candidate: template<class _Tp, class _Dp> typename std::enable_if<(! std::__is_swappable<_T2>::value)>::type std::swap(std::unique_ptr<_Tp, _Dp>&, std::unique_ptr<_Tp, _Dp>&) <deleted>
+     swap(unique_ptr<_Tp, _Dp>&,
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/unique_ptr.h:676:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::unique_ptr<_Tp, _Dp>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/bits/locale_conv.h:41:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/locale:43,
+                 from C:/msys64/mingw64/include/c++/7.2.0/iomanip:43,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:72,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/unique_ptr.h:669:5: note: candidate: template<class _Tp, class _Dp> typename std::enable_if<std::__is_swappable<_T2>::value>::type std::swap(std::unique_ptr<_Tp, _Dp>&, std::unique_ptr<_Tp, _Dp>&)
+     swap(unique_ptr<_Tp, _Dp>& __x,
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/unique_ptr.h:669:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::unique_ptr<_Tp, _Dp>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/functional:58:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:71,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/std_function.h:803:5: note: candidate: template<class _Res, class ... _Args> void std::swap(std::function<_Res(_ArgTypes ...)>&, std::function<_Res(_ArgTypes ...)>&)
+     swap(function<_Res(_Args...)>& __x, function<_Res(_Args...)>& __y) noexcept
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/std_function.h:803:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::function<_Res(_ArgTypes ...)>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/functional:54:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:71,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/tuple:1609:5: note: candidate: template<class ... _Elements> typename std::enable_if<(! std::__and_<std::__is_swappable<_Elements>...>::value)>::type std::swap(std::tuple<_Tps ...>&, std::tuple<_Tps ...>&) <deleted>
+     swap(tuple<_Elements...>&, tuple<_Elements...>&) = delete;
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/tuple:1609:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::tuple<_Tps ...>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/functional:54:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:71,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/tuple:1602:5: note: candidate: template<class ... _Elements> typename std::enable_if<std::__and_<std::__is_swappable<_Elements>...>::value>::type std::swap(std::tuple<_Tps ...>&, std::tuple<_Tps ...>&)
+     swap(tuple<_Elements...>& __x, tuple<_Elements...>& __y)
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/tuple:1602:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::tuple<_Tps ...>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/tuple:39:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/functional:54,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:71,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/array:302:5: note: candidate: template<class _Tp, long long unsigned int _Nm> typename std::enable_if<(! typename std::__array_traits<_Tp, _Nm>::_Is_swappable:: value)>::type std::swap(std::array<_Tp, _Nm>&, std::array<_Tp, _Nm>&) <deleted>
+     swap(array<_Tp, _Nm>&, array<_Tp, _Nm>&) = delete;
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/array:302:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::array<_Tp, _Nm>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/tuple:39:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/functional:54,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:71,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/array:294:5: note: candidate: template<class _Tp, long long unsigned int _Nm> typename std::enable_if<typename std::__array_traits<_Tp, _Nm>::_Is_swappable:: value>::type std::swap(std::array<_Tp, _Nm>&, std::array<_Tp, _Nm>&)
+     swap(array<_Tp, _Nm>& __one, array<_Tp, _Nm>& __two)
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/array:294:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::array<_Tp, _Nm>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:70:0,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/fstream:1073:5: note: candidate: template<class _CharT, class _Traits> void std::swap(std::basic_fstream<_CharT, _Traits>&, std::basic_fstream<_CharT, _Traits>&)
+     swap(basic_fstream<_CharT, _Traits>& __x,
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/fstream:1073:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::basic_fstream<_CharT, _Traits>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:70:0,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/fstream:1066:5: note: candidate: template<class _CharT, class _Traits> void std::swap(std::basic_ofstream<_CharT, _Traits>&, std::basic_ofstream<_CharT, _Traits>&)
+     swap(basic_ofstream<_CharT, _Traits>& __x,
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/fstream:1066:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::basic_ofstream<_CharT, _Traits>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:70:0,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/fstream:1059:5: note: candidate: template<class _CharT, class _Traits> void std::swap(std::basic_ifstream<_CharT, _Traits>&, std::basic_ifstream<_CharT, _Traits>&)
+     swap(basic_ifstream<_CharT, _Traits>& __x,
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/fstream:1059:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::basic_ifstream<_CharT, _Traits>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:70:0,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/fstream:1052:5: note: candidate: template<class _CharT, class _Traits> void std::swap(std::basic_filebuf<_CharT, _Traits>&, std::basic_filebuf<_CharT, _Traits>&)
+     swap(basic_filebuf<_CharT, _Traits>& __x,
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/fstream:1052:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::basic_filebuf<_CharT, _Traits>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/deque:64:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:68,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_deque.h:2312:5: note: candidate: template<class _Tp, class _Alloc> void std::swap(std::deque<_Tp, _Alloc>&, std::deque<_Tp, _Alloc>&)
+     swap(deque<_Tp,_Alloc>& __x, deque<_Tp,_Alloc>& __y)
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_deque.h:2312:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::deque<_Tp, _Alloc>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/string:52:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/bits/locale_classes.h:40,
+                 from C:/msys64/mingw64/include/c++/7.2.0/bits/ios_base.h:41,
+                 from C:/msys64/mingw64/include/c++/7.2.0/ios:42,
+                 from C:/msys64/mingw64/include/c++/7.2.0/istream:38,
+                 from C:/msys64/mingw64/include/c++/7.2.0/sstream:38,
+                 from C:/msys64/mingw64/include/c++/7.2.0/complex:45,
+                 from C:/msys64/mingw64/include/c++/7.2.0/ccomplex:39,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:52,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/basic_string.h:6044:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> void std::swap(std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     swap(basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/basic_string.h:6044:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::__cxx11::basic_string<_CharT, _Traits, _Alloc>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/bits/stl_algobase.h:64:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/bits/char_traits.h:39,
+                 from C:/msys64/mingw64/include/c++/7.2.0/ios:40,
+                 from C:/msys64/mingw64/include/c++/7.2.0/istream:38,
+                 from C:/msys64/mingw64/include/c++/7.2.0/sstream:38,
+                 from C:/msys64/mingw64/include/c++/7.2.0/complex:45,
+                 from C:/msys64/mingw64/include/c++/7.2.0/ccomplex:39,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:52,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_pair.h:498:5: note: candidate: template<class _T1, class _T2> typename std::enable_if<(! std::__and_<std::__is_swappable<_T1>, std::__is_swappable<_T2> >::value)>::type std::swap(std::pair<_T1, _T2>&, std::pair<_T1, _T2>&) <deleted>
+     swap(pair<_T1, _T2>&, pair<_T1, _T2>&) = delete;
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_pair.h:498:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::pair<_T1, _T2>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/bits/stl_algobase.h:64:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/bits/char_traits.h:39,
+                 from C:/msys64/mingw64/include/c++/7.2.0/ios:40,
+                 from C:/msys64/mingw64/include/c++/7.2.0/istream:38,
+                 from C:/msys64/mingw64/include/c++/7.2.0/sstream:38,
+                 from C:/msys64/mingw64/include/c++/7.2.0/complex:45,
+                 from C:/msys64/mingw64/include/c++/7.2.0/ccomplex:39,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:52,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_pair.h:490:5: note: candidate: template<class _T1, class _T2> typename std::enable_if<std::__and_<std::__is_swappable<_T1>, std::__is_swappable<_T2> >::value>::type std::swap(std::pair<_T1, _T2>&, std::pair<_T1, _T2>&)
+     swap(pair<_T1, _T2>& __x, pair<_T1, _T2>& __y)
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_pair.h:490:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   'ProconLib::Vector<double>' is not derived from 'std::pair<_T1, _T2>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/bits/nested_exception.h:40:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/exception:143,
+                 from C:/msys64/mingw64/include/c++/7.2.0/ios:39,
+                 from C:/msys64/mingw64/include/c++/7.2.0/istream:38,
+                 from C:/msys64/mingw64/include/c++/7.2.0/sstream:38,
+                 from C:/msys64/mingw64/include/c++/7.2.0/complex:45,
+                 from C:/msys64/mingw64/include/c++/7.2.0/ccomplex:39,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:52,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/move.h:210:5: note: candidate: template<class _Tp, long long unsigned int _Nm> typename std::enable_if<std::__is_swappable<_Tp>::value>::type std::swap(_Tp (&)[_Nm], _Tp (&)[_Nm])
+     swap(_Tp (&__a)[_Nm], _Tp (&__b)[_Nm])
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/move.h:210:5: note:   template argument deduction/substitution failed:
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:160:30: note:   mismatched types '_Tp [_Nm]' and 'ProconLib::Vector<double>'
+             if(row!=tar) swap(mat[row],mat[tar]);
+                          ~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/7.2.0/bits/nested_exception.h:40:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/exception:143,
+                 from C:/msys64/mingw64/include/c++/7.2.0/ios:39,
+                 from C:/msys64/mingw64/include/c++/7.2.0/istream:38,
+                 from C:/msys64/mingw64/include/c++/7.2.0/sstream:38,
+                 from C:/msys64/mingw64/include/c++/7.2.0/complex:45,
+                 from C:/msys64/mingw64/include/c++/7.2.0/ccomplex:39,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:52,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/move.h:187:5: note: candidate: template<class _Tp> typename std::enable_if<std::__and_<std::__not_<std::__is_tuple_like<_Tp> >, std::is_move_constructible<_Tp>, std::is_move_assignable<_Tp> >::value>::type std::swap(_Tp&, _Tp&)
+     swap(_Tp& __a, _Tp& __b)
+     ^~~~
+C:/msys64/mingw64/include/c++/7.2.0/bits/move.h:187:5: note:   template argument deduction/substitution failed:
+C:/msys64/mingw64/include/c++/7.2.0/bits/move.h: In substitution of 'template<class _Tp> typename std::enable_if<std::__and_<std::__not_<std::__is_tuple_like<_Tp> >, std::is_move_constructible<_Tp>, std::is_move_assignable<_Tp> >::value>::type std::swap(_Tp&, _Tp&) [with _Tp = ProconLib::Vector<double>]':
+../matrix.cpp:160:30:   required from 'ProconLib::Matrix<T> ProconLib::gaussianElimination(ProconLib::Matrix<T>) [with T = double; Detail = ProconLib::Detail<double>]'
+matrixTest.cpp:36:28:   required from here
+C:/msys64/mingw64/include/c++/7.2.0/bits/move.h:187:5: error: no type named 'type' in 'struct std::enable_if<false, void>'
+In file included from C:/msys64/mingw64/include/c++/7.2.0/bits/stl_tempbuf.h:60:0,
+                 from C:/msys64/mingw64/include/c++/7.2.0/bits/stl_algo.h:62,
+                 from C:/msys64/mingw64/include/c++/7.2.0/algorithm:62,
+                 from C:/msys64/mingw64/include/c++/7.2.0/x86_64-w64-mingw32/bits/stdc++.h:65,
+                 from matrixTest.cpp:1:
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_construct.h: In instantiation of 'void std::_Construct(_T1*, _Args&& ...) [with _T1 = ProconLib::Vector<double>; _Args = {const ProconLib::Vector<double>&}]':
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_uninitialized.h:83:18:   required from 'static _ForwardIterator std::__uninitialized_copy<_TrivialValueTypes>::__uninit_copy(_InputIterator, _InputIterator, _ForwardIterator) [with _InputIterator = __gnu_cxx::__normal_iterator<const ProconLib::Vector<double>*, std::vector<ProconLib::Vector<double>, std::allocator<ProconLib::Vector<double> > > >; _ForwardIterator = ProconLib::Vector<double>*; bool _TrivialValueTypes = false]'
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_uninitialized.h:134:15:   required from '_ForwardIterator std::uninitialized_copy(_InputIterator, _InputIterator, _ForwardIterator) [with _InputIterator = __gnu_cxx::__normal_iterator<const ProconLib::Vector<double>*, std::vector<ProconLib::Vector<double>, std::allocator<ProconLib::Vector<double> > > >; _ForwardIterator = ProconLib::Vector<double>*]'
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_uninitialized.h:289:37:   required from '_ForwardIterator std::__uninitialized_copy_a(_InputIterator, _InputIterator, _ForwardIterator, std::allocator<_Tp>&) [with _InputIterator = __gnu_cxx::__normal_iterator<const ProconLib::Vector<double>*, std::vector<ProconLib::Vector<double>, std::allocator<ProconLib::Vector<double> > > >; _ForwardIterator = ProconLib::Vector<double>*; _Tp = ProconLib::Vector<double>]'
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_vector.h:331:31:   required from 'std::vector<_Tp, _Alloc>::vector(const std::vector<_Tp, _Alloc>&) [with _Tp = ProconLib::Vector<double>; _Alloc = std::allocator<ProconLib::Vector<double> >]'
+../matrix.cpp:33:11:   required from here
+C:/msys64/mingw64/include/c++/7.2.0/bits/stl_construct.h:75:7: error: use of deleted function 'ProconLib::Vector<double>::Vector(const ProconLib::Vector<double>&)'
+     { ::new(static_cast<void*>(__p)) _T1(std::forward<_Args>(__args)...); }
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from matrixTest.cpp:2:0:
+../matrix.cpp:17:11: note: 'ProconLib::Vector<double>::Vector(const ProconLib::Vector<double>&)' is implicitly declared as deleted because 'ProconLib::Vector<double>' declares a move constructor or move assignment operator
+     class Vector{
+           ^~~~~~
