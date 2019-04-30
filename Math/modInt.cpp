@@ -1,7 +1,6 @@
 #include<bits/stdc++.h>
 
 namespace ProconLib{
-    //assert not verified!!!
     using ll=long long;
     using Int=int;
 
@@ -19,25 +18,59 @@ namespace ProconLib{
         ModInt<MOD,IsPrime>& operator+=(ModInt<MOD,IsPrime> rhs);
         ModInt<MOD,IsPrime>& operator-=(ModInt<MOD,IsPrime> rhs);
         ModInt<MOD,IsPrime>& operator*=(ModInt<MOD,IsPrime> rhs);
-        ModInt<MOD,IsPrime> operator-(){return ModInt<MOD,IsPrime>(-this->n);};
-        ModInt<MOD,IsPrime> operator*(ModInt<MOD,IsPrime> rhs);
+
         bool operator==(ModInt<MOD,IsPrime> rhs){return n==rhs.n;}
+        const Int& get() const {return n;}
     };
 
     template<Int MOD,bool IsPrime>
-    ModInt<MOD,IsPrime> operator+(ModInt<MOD,IsPrime> lhs,ModInt<MOD,IsPrime> rhs);
+    ModInt<MOD,IsPrime> operator+(ModInt<MOD,IsPrime> lhs,ModInt<MOD,IsPrime> rhs){return lhs+=rhs;};
     template<Int MOD,bool IsPrime>
-    ModInt<MOD,IsPrime> operator+(ModInt<MOD,IsPrime> mn);
+    ModInt<MOD,IsPrime> operator+(ModInt<MOD,IsPrime> lhs,int rhs){return lhs+ModInt<MOD,IsPrime>(rhs);}
     template<Int MOD,bool IsPrime>
-    ModInt<MOD,IsPrime> operator-(ModInt<MOD,IsPrime> lhs,ModInt<MOD,IsPrime> rhs);
+    ModInt<MOD,IsPrime> operator+(ModInt<MOD,IsPrime> lhs,ll rhs){return lhs+ModInt<MOD,IsPrime>(rhs);}
     template<Int MOD,bool IsPrime>
-    ModInt<MOD,IsPrime> operator*(ModInt<MOD,IsPrime> lhs,ModInt<MOD,IsPrime> rhs);
+    ModInt<MOD,IsPrime> operator+(int lhs,ModInt<MOD,IsPrime> rhs){return ModInt<MOD,IsPrime>(lhs)+rhs;}
+    template<Int MOD,bool IsPrime>
+    ModInt<MOD,IsPrime> operator+(ll lhs,ModInt<MOD,IsPrime> rhs){return ModInt<MOD,IsPrime>(lhs)+rhs;}
+
+    template<Int MOD,bool IsPrime>
+    ModInt<MOD,IsPrime> operator+(ModInt<MOD,IsPrime> mn){return mn;};
+    template<Int MOD,bool IsPrime>
+    ModInt<MOD,IsPrime> operator-(ModInt<MOD,IsPrime> mn){return ModInt<MOD,IsPrime>(-mn.get());};
+
+    template<Int MOD,bool IsPrime>
+    ModInt<MOD,IsPrime> operator-(ModInt<MOD,IsPrime> lhs,ModInt<MOD,IsPrime> rhs){return lhs-=rhs;};
+    template<Int MOD,bool IsPrime>
+    ModInt<MOD,IsPrime> operator-(ModInt<MOD,IsPrime> lhs,int rhs){return lhs-ModInt<MOD,IsPrime>(rhs);};
+    template<Int MOD,bool IsPrime>
+    ModInt<MOD,IsPrime> operator-(ModInt<MOD,IsPrime> lhs,ll rhs){return lhs-ModInt<MOD,IsPrime>(rhs);};
+    template<Int MOD,bool IsPrime>
+    ModInt<MOD,IsPrime> operator-(int lhs,ModInt<MOD,IsPrime> rhs){return ModInt<MOD,IsPrime>(lhs)-rhs;};
+    template<Int MOD,bool IsPrime>
+    ModInt<MOD,IsPrime> operator-(ll lhs,ModInt<MOD,IsPrime> rhs){return ModInt<MOD,IsPrime>(lhs)-rhs;};
+
+    template<Int MOD,bool IsPrime>
+    ModInt<MOD,IsPrime> operator*(ModInt<MOD,IsPrime> lhs,ModInt<MOD,IsPrime> rhs){return lhs*=rhs;};
+    template<Int MOD,bool IsPrime>
+    ModInt<MOD,IsPrime> operator*(ModInt<MOD,IsPrime> lhs,int rhs){return lhs*ModInt<MOD,IsPrime>(rhs);}
+    template<Int MOD,bool IsPrime>
+    ModInt<MOD,IsPrime> operator*(ModInt<MOD,IsPrime> lhs,ll rhs){return lhs*ModInt<MOD,IsPrime>(rhs);}
+    template<Int MOD,bool IsPrime>
+    ModInt<MOD,IsPrime> operator*(ll lhs,ModInt<MOD,IsPrime> rhs){return ModInt<MOD,IsPrime>(lhs)*rhs;}
+    template<Int MOD,bool IsPrime>
+    ModInt<MOD,IsPrime> operator*(int lhs,ModInt<MOD,IsPrime> rhs){return ModInt<MOD,IsPrime>(lhs)*rhs;}
+
     template<Int MOD>
     ModInt<MOD,true> operator/(ModInt<MOD,true> lhs,ModInt<MOD,true> rhs);
     template<Int MOD,bool IsPrime>
     ModInt<MOD,IsPrime> powm(ModInt<MOD,IsPrime> x,Int k);
     template<Int MOD>
     ModInt<MOD,true> inv(ModInt<MOD,true> x){return powm(x,MOD-2);}
+
+    template<Int MOD,bool IsPrime>
+    std::ostream& operator<<(std::ostream& os,const ModInt<MOD,IsPrime> &mn);
+    
 
     template<Int MOD,bool IsPrime>
     ModInt<MOD,IsPrime>& ModInt<MOD,IsPrime>::operator+=(ModInt<MOD,IsPrime> rhs){
@@ -56,22 +89,7 @@ namespace ProconLib{
         n=ll(n)*rhs.n%MOD;
         return *this;
     }
-    template<Int MOD,bool IsPrime>
-    ModInt<MOD,IsPrime> operator+(ModInt<MOD,IsPrime> lhs,ModInt<MOD,IsPrime> rhs){
-        return lhs+=rhs;
-    }
-    template<Int MOD,bool IsPrime>
-    ModInt<MOD,IsPrime> operator+(ModInt<MOD,IsPrime> mn){
-        return mn;
-    }
-    template<Int MOD,bool IsPrime>
-    ModInt<MOD,IsPrime> operator-(ModInt<MOD,IsPrime> lhs,ModInt<MOD,IsPrime> rhs){
-        return lhs-=rhs;
-    }
-    template<Int MOD,bool IsPrime>
-    ModInt<MOD,IsPrime> operator*(ModInt<MOD,IsPrime> lhs,ModInt<MOD,IsPrime> rhs){
-        return lhs*=*rhs;
-    }
+    
     template<Int MOD>
     ModInt<MOD,true> operator/(ModInt<MOD,true> lhs,ModInt<MOD,true> rhs){
         return lhs*inv(rhs);
@@ -85,5 +103,11 @@ namespace ProconLib{
             x*=x;
         }
         return res;
+    }
+
+    template<Int MOD,bool IsPrime>
+    std::ostream& operator<<(std::ostream& os,const ModInt<MOD,IsPrime> &mn){
+        os<<mn.get();
+        return os;
     }
 }
