@@ -1,35 +1,40 @@
-#include<bits/stdc++.h>
-using namespace std;
+#include<vector>
 
-using Weight=long long;
-struct Edge{
-    int from,to;
-    Weight cost;
-};
-using Edges=vector<Edge>;
-using Graph=vector<Edges>;
-bool BellmanFord(int s,Graph& g,vector<Weight> &d){
-    int n=g.size();
-    d[s]=0;
-    bool update=true;
-    for(int loop=0;update && loop<=n;loop++){
-        if(loop==n){
-            return false;
-        }
-        update=false;
-        for(int i=0;i<n;i++){
-            for(int j=0;j<g[i].size();j++){
-                int to=g[i][j].to;
-                Weight w=d[i]+g[i][j].cost;
-                if(d[to]>w){
-                    update=true;
-                    d[to]=w;
+namespace ProconLib{
+
+    template<typename cost_t>
+    constexpr cost_t INF(){return cost_t(1e15);}
+    template<class graph_t,class cost_t,cost_t INF=INF<cost_t>()>
+    bool BellmanFord(int s,graph_t& g,std::vector<cost_t> &d){
+        int n=g.size();
+        d.assign(n,INF);
+        bool update=true;
+        d[s]=0;
+        for(int loop=0;update;loop++){
+            if(loop>=n+1){
+                return false;
+            }
+            update=false;
+            for(int i=0;i<n;i++){
+                if(d[i]==INF) continue;
+                for(int j=0;j<g[i].size();j++){
+                    int to=g[i][j].to;
+                    cost_t w=d[i]+g[i][j].cost;
+                    if(d[to]>w){
+                        update=true;
+                        d[to]=w;
+                    }
                 }
             }
         }
+        return true;
     }
-    return true;
+
+    // using Weight=long long;
+    // struct Edge{
+    //     int to;
+    //     Weight cost;
+    // };
+    // using Edges=std::vector<Edge>;
+    // using Graph=std::vector<Edges>;
 }
-
-
-//not verified
