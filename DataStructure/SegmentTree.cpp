@@ -1,11 +1,7 @@
 #include<vector>
 
 namespace ProconLib{
-    struct MonoidExample{
-        using value_t=int;
-        static constexpr value_t E(){return 0;}
-        static value_t op(value_t lhs,value_t rhs){return lhs+rhs;}
-    };
+    
     template<class Monoid>
     class SegmentTree{
         public: 
@@ -23,6 +19,12 @@ namespace ProconLib{
         value_t query(int a,int b);
     };
 
+    // struct MonoidExample{
+    //     using value_t=int;
+    //     static constexpr value_t E(){return 0;}
+    //     static value_t op(value_t lhs,value_t rhs){return lhs+rhs;}
+    // };
+    
     template<typename Monoid>
     SegmentTree<Monoid>::SegmentTree(int n):N(calcN(n)),dat(2*N-1,Monoid::E()){}
 
