@@ -18,16 +18,17 @@ namespace ProconLib{
         std::vector<char> flag;
 
         static int calcN(int n){int res=1; while(res<n) res*=2; return res;};
-        void propagate(int node,int l,int r);
+        void propagate(int node);
         void applyLazy(int node,update_t x);
         void applyImpl(int l,int r,int k,int lb,int ub,update_t f);
         void updateImpl(int pos,int k,int lb,int ub,value_t x);
         value_t queryImpl(int l,int r,int k,int lb,int ub);
-        value_t getValue(int node,int l,int r){return flag[node] ? MUStruct::evaluate(dat[node],lazy[node],l,r) : dat[node];}
+        value_t getValue(int node){return flag[node] ? MUStruct::evaluate(dat[node],lazy[node]) : dat[node];}
         
         public:
         LazySegmentTree(int N);
         void apply(int l,int r,update_t f);
+        void updateALL(std::vector<value_t> x);
         void update(int pos,value_t v);
         value_t query(int a,int b);
     };
@@ -42,20 +43,19 @@ namespace ProconLib{
     //         using update_t = int;
     //         static update_t op(update_t lhs,update_t rhs){ return lhs+rhs;}
     //     };
-    //     static Monoid::value_t evaluate(Monoid::value_t v,Update::update_t u,int l,int r){ return v+u*(r-l);}
+    //     static Monoid::value_t evaluate(Monoid::value_t v,Update::update_t u){ return v+u*(r-l);}
     // };
 
     template<class MUStruct>
     LazySegmentTree<MUStruct>::LazySegmentTree(int n):N(calcN(n)),dat(N*2-1,Monoid::E()),lazy(N*2-1),flag(N*2-1,false){}
     
     template<class MUStruct>
-    void LazySegmentTree<MUStruct>::propagate(int node,int l,int r){
+    void LazySegmentTree<MUStruct>::propagate(int node){
         if(flag[node]){
             flag[node]=false;
             applyLazy(node*2+1,lazy[node]);
             applyLazy(node*2+2,lazy[node]);
-            int mid=(l+r)/2;
-            dat[node]=Monoid::op(getValue(node*2+1,l,mid),getValue(node*2+2,mid,r));
+            dat[node]=Monoid::op(getValue(node*2+1),getValue(node*2+2));
         }
     }
 
@@ -77,11 +77,11 @@ namespace ProconLib{
             applyLazy(k,x);
             return;
         }
-        propagate(k,lb,ub);
+        propagate(k);
         int mid=(lb+ub)/2;
-        updateImpl(l,r,k*2+1,lb,mid,x);
-        updateImpl(l,r,k*2+2,mid,ub,x);
-        dat[k]=Monoid::op(getValue(k*2+1,lb,ub),getValue(k*2+2,lb,ub));
+        applyImpl(l,r,k*2+1,lb,mid,x);
+        applyImpl(l,r,k*2+2,mid,ub,x);
+        dat[k]=Monoid::op(getValue(k*2+1),getValue(k*2+2));
     }
 
     template<class MUStruct>
@@ -92,20 +92,20 @@ namespace ProconLib{
             dat[k]=x;
             return;
         }
-        propagate(k,lb,ub);
+        propagate(k);
         int mid=(lb+ub)/2;
         updateImpl(pos,k*2+1,lb,mid,x);
         updateImpl(pos,k*2+2,mid,ub,x);
-        dat[k]=Monoid::op(getValue(k*2+1,lb,ub),getValue(k*2+2,lb,ub));
+        dat[k]=Monoid::op(getValue(k*2+1),getValue(k*2+2));
     }
 
     template<class MUStruct>
     typename LazySegmentTree<MUStruct>::value_t LazySegmentTree<MUStruct>::queryImpl(int l,int r,int k,int lb,int ub){
         if(r<=lb || ub<=l) return Monoid::E();
         if(l<=lb && ub<=r){
-            return getValue(k,lb,ub);
+            return getValue(k);
         }
-        propagate(k,lb,ub);
+        propagate(k);
         int mid=(lb+ub)/2;
         value_t lhs=queryImpl(l,r,k*2+1,lb,mid);
         value_t rhs=queryImpl(l,r,k*2+2,mid,ub);
@@ -120,6 +120,19 @@ namespace ProconLib{
     template<class MUStruct>
     void LazySegmentTree<MUStruct>::update(int pos,value_t x){
         updateImpl(pos,0,0,N,x);
+    }
+
+    template<class MUStruct>
+    void LazySegmentTree<MUStruct>::updateALL(std::vector<value_t> xs){
+        for(int i=0;i<xs.size();i++){
+            dat[i+N-1]=xs[i];
+        }
+        for(int i=xs.size();i<N;i++) dat[i+N-1]=Monoid::E(),flag[i+N-1]=false;
+        for(int i=N-2;i>=0;i--){
+            flag[i]=false;
+            value_t c1v=dat[i*2+1],c2v=dat[i*2+2];
+            dat[i]=Monoid::op(c1v,c2v);
+        }
     }
 
     template<class MUStruct>

@@ -18,7 +18,7 @@ struct MyMUStruct{
             return y;
         }
     };
-    static typename Monoid::value_t evaluate(Monoid::value_t x,Update::update_t y,int l,int r){
+    static typename Monoid::value_t evaluate(Monoid::value_t x,Update::update_t y){
         return y;
     }
 };
@@ -39,7 +39,7 @@ int main(){
         int tar=e.first;
         vector<int>& vec=e.second;
         if(vec.empty()) continue;
-        seg.update(vec[0],vec.back()+1,tar);
+        seg.apply(vec[0],vec.back()+1,tar);
     }
     
     vector<int> b(n);
