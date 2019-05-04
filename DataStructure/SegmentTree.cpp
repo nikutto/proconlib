@@ -7,8 +7,8 @@ namespace ProconLib{
         public: 
         using value_t= typename Monoid::value_t;
         private:
-        std::vector<value_t> dat;
         int N;
+        std::vector<value_t> dat;
         static int calcN(int n){int res=1; while(res<n) res*=2; return res;}
         value_t queryImpl(int a,int b,int k,int l,int r);
 
