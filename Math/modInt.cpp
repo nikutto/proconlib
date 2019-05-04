@@ -1,16 +1,17 @@
-#include<bits/stdc++.h>
+#include<iostream>
 
 namespace ProconLib{
     using ll=long long;
     using Int=int;
-
     template<Int MOD,bool IsPrime=true>
     class ModInt{
         Int n;        
+        static Int regularize(int n){Int tmp=n%MOD; return tmp>=0 ? tmp : tmp+MOD;}
+        static Int regularize(ll n){Int tmp=n%MOD; return tmp>=0 ? tmp : tmp+MOD;}
         public:
         ModInt():n(0){};
-        ModInt(int n):n(n>=MOD ? n%MOD : (n<0 ? (n%MOD+MOD)%MOD : n)){}
-        ModInt(long long n):n(n>=0 ? n%MOD : (n%MOD+MOD)%MOD){}
+        ModInt(int n):n(regularize(n)){}
+        ModInt(long long n):n(regularize(n)){}
         ModInt(const ModInt<MOD,IsPrime> &mn):n(mn.n){}
         explicit operator int() const{return n;}
         explicit operator long long() const{return n;}
@@ -21,6 +22,8 @@ namespace ProconLib{
 
         bool operator==(ModInt<MOD,IsPrime> rhs){return n==rhs.n;}
         const Int& get() const {return n;}
+        void set(int x){n=regularize(x);}
+        void set(ll x){n=regularize(x);}        
     };
 
     template<Int MOD,bool IsPrime>
@@ -109,5 +112,13 @@ namespace ProconLib{
     std::ostream& operator<<(std::ostream& os,const ModInt<MOD,IsPrime> &mn){
         os<<mn.get();
         return os;
+    }
+
+    template<Int MOD,bool IsPrime>
+    std::istream& operator>>(std::istream& is,ModInt<MOD,IsPrime> &mn){
+        Int tmp;
+        is>>tmp;
+        mn.set(tmp);
+        return is;
     }
 }

@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 namespace ProconLib{
+
     template<typename T>
     struct L{
         T a,b; //ax+b
@@ -11,6 +12,10 @@ namespace ProconLib{
             return (l2.b-l1.b)*(l1.a-l0.a)>=(l1.b-l0.b)*(l2.a-l1.a);
         }
     };
+
+
+    //Default: downward convex
+    //i.e. given x, return max(a[i]x+b[i])
     template<typename T,typename Comp=std::less<T>>
     class ConvexHullTrick{
         std::vector<L<T>> lines;
