@@ -1,6 +1,4 @@
 #include<bits/stdc++.h>
-
-
 namespace ProconLib{
 
     template<typename graph_t>
@@ -25,7 +23,7 @@ namespace ProconLib{
         for(int i=0;i<n;i++) dfs(i,g);
         fill(begin(used),end(used),0);
         cmp.assign(n,-1);
-        int k=0;
+        k=0;
         for(int i=n-1;i>=0;i--) if(!used[vs[i]]) rdfs(vs[i],k++,rg);
     }
 
@@ -61,34 +59,3 @@ namespace ProconLib{
     }
 
 }
-
-
-// // verify AOJ(GRL/GRL_3_C)(http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_C)
-// struct Edge{
-//     int to;
-// };
-// using namespace std;
-// using namespace ProconLib;
-// using Graph=vector<vector<Edge>>;
-
-// int main(){
-//     int V,E;
-//     cin>>V>>E;
-//     Graph g(V);
-//     for(int i=0;i<E;i++) {
-//         int u,v;
-//         cin>>u>>v;
-//         g[u].push_back(Edge{v});
-//     }
-//     SCC<Graph> scc(g);
-//     int q;
-//     cin>>q;
-//     auto cmp=scc.getCmp();
-//     while(q--){
-//         int u,v;
-//         cin>>u>>v;
-//         cout<<(cmp[u]==cmp[v])<<endl;
-//     }
-//     return 0;
-// }
-//
