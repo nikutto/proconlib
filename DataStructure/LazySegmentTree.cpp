@@ -10,7 +10,7 @@ namespace ProconLib{
         using value_t=typename Monoid::value_t;
         using update_t=typename Update::update_t;
 
-        private:
+        protected:
 
         int N;
         std::vector<value_t> dat;
@@ -36,14 +36,14 @@ namespace ProconLib{
     // struct MUStructExample{
     //     struct Monoid{
     //         using value_t=int;
-    //         static constexpr value_t E(){return 0;}
-    //         static value_t op(value_t lhs,value_t rhs){ return lhs+rhs;}
+    //         static constexpr value_t E(){return 1e9;}
+    //         static value_t op(value_t lhs,value_t rhs){ return min(lhs,rhs);}
     //     };
     //     struct Update{
     //         using update_t = int;
     //         static update_t op(update_t lhs,update_t rhs){ return lhs+rhs;}
     //     };
-    //     static Monoid::value_t evaluate(Monoid::value_t v,Update::update_t u){ return v+u*(r-l);}
+    //     static Monoid::value_t evaluate(Monoid::value_t v,Update::update_t u){ return v+u;}
     // };
 
     template<class MUStruct>
