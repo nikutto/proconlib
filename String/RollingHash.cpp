@@ -13,7 +13,7 @@ namespace ProconLib{
         RollingHash(Container c):N(c.size()),h(N+1,0),powA(N+1){
             int id=0;
             for(auto e:c){
-                h.push_back((h[id]*A+e)%MOD);
+                h[id+1]=((h[id]*A+e)%MOD);
                 id++;
             }
             powA[0]=1;
