@@ -7,7 +7,6 @@ namespace ProconLib{
         struct Edge{
             int to;
             cost_t cap,rev;
-            cost_t cost;
         };
         using Edges=vector<Edge>;
         using Graph=vector<Edges>;
