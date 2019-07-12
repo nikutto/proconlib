@@ -112,6 +112,5 @@ namespace ProconLib{
         for(auto to:cdGraph[v]){
             dfsRun(to,g,solver);
         }
-    }
-    
+    }    
 }
