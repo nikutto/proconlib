@@ -5,8 +5,6 @@ namespace ProconLib{
     //struct graph_t
     //  requirement
     //      int to;
-
-
     template<class graph_t>
     std::vector<int> TopologicalSort(const graph_t &g){
         int n=g.size();
