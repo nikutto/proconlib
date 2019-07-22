@@ -1,5 +1,6 @@
-#include<bits/stdc++.h>
-using namespace std;
+#include<vector>
+#include<functional>
+
 namespace ProconLib{
 
     template<typename T>
@@ -37,7 +38,7 @@ namespace ProconLib{
         }
     };
     template<typename T,typename Comp>
-    void build(ConvexHullTrick<T,Comp>& cht,vector<L<T>> vec){
+    void build(ConvexHullTrick<T,Comp>& cht,std::vector<L<T>> vec){
         sort(vec.begin(),vec.end(),Comp);
         for(auto l:vec) cht.add(l);
     }
