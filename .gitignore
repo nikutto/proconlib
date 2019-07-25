@@ -1,2 +1,3 @@
 *.exe
 _*.cpp
+.vscode

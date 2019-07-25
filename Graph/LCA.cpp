@@ -16,7 +16,8 @@ namespace ProconLib{
         std::vector<int> dep;
 
         public:
-        LCA(int root,const graph_t &g);
+        LCA(std::vector<int> root,const graph_t &g);
+        LCA(int root,const graph_t &g):LCA(std::vector<int>(1,root),g){};
         int query(int a,int b);
         int depth(int v){return dep[v];}
     };
@@ -33,20 +34,23 @@ namespace ProconLib{
     }
 
     template<class graph_t>
-    LCA<graph_t>::LCA(int root,const graph_t &g): N(g.size()),
+    LCA<graph_t>::LCA(std::vector<int> roots,const graph_t &g): N(g.size()),
                                         logN(safeLog2(N)),
                                         par(logN,std::vector<int>(N)),
                                         dep(N)
     {
-        par[0][root]=root;
-        dep[root]=0;
-        dfs(root,root,g);
+        for(auto root:roots){
+            par[0][root]=root;
+            dep[root]=0;
+            dfs(root,root,g);
+        }
         for(int i=0;i+1<logN;i++){
             for(int j=0;j<N;j++){
                 par[i+1][j]=par[i][par[i][j]];
             }
         }
     }
+
 
     template<class graph_t>
     int LCA<graph_t>::query(int a,int b){
@@ -65,7 +69,7 @@ namespace ProconLib{
         }
         assert(a!=b);
         a=par[0][a],b=par[0][b];
-        assert(a==b);
+        if(a!=b) return -1; // if (g is a forest) and (a and b is disconnected).
         return a;
     }
     
