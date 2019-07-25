@@ -4,16 +4,19 @@
 ## Description
 
     This library is for myself.
-    Anyone can use this library, but that is not guaranteed.
+    Anyone can use this library, but at your own risk.
 
 ## Algorithm
 
 - ConvexHullTrick
+- Compress
 
 ## DataStructure
 
 - SegmentTree
 - LazySegmentTree
+- BSLazySegmentTree (Binary Searchable LazySegmentTree)
+- BIT(add and sum only)
 - DisjointSparseTable
 - UnionFind
 
@@ -21,8 +24,12 @@
 
 - Dijkstra
 - BellmanFord
+- Prim
+- Kruskal
 - MaximumFlow
 - MinimumCostFlow
+- CentroidDecomposition
+- HeavyLightDecomposition
 
 ## Math
 
