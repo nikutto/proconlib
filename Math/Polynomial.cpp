@@ -17,6 +17,9 @@ namespace ProconLib{
         
         public:
         Polynomial(int N):N(N),dat(N+1){}
+        Polynomial():Polynomial(0){}
+        Polynomial(const Polynomial& obj):N(obj.N),dat(obj.dat){}
+        Polynomial(const Polynomial&& obj):N(obj.N),dat(std::move(obj.dat)){}
 
         int degree(){return N;}
         void resize(int N){ this->N=N; dat.resize(N+1,T(0));}
@@ -24,6 +27,8 @@ namespace ProconLib{
         void shrink();
         T& operator[](int pos){return dat[pos];}
         const T& operator[](int pos) const {return dat[pos];}
+
+        T operator()(T x);
     };
 
     template<typename T>
@@ -33,11 +38,17 @@ namespace ProconLib{
     template<typename T>
     Polynomial<T>& operator*=(Polynomial<T> &lhs,Polynomial<T> rhs);
     template<typename T>
+    Polynomial<T>& operator*=(Polynomial<T> &lhs,T rhs);
+    template<typename T>
     Polynomial<T> operator+(Polynomial<T> lhs,Polynomial<T> rhs){return lhs+=rhs;}
     template<typename T>
     Polynomial<T> operator-(Polynomial<T> lhs,Polynomial<T> rhs){return lhs-=rhs;}
     template<typename T>
     Polynomial<T> operator*(Polynomial<T> lhs,Polynomial<T> rhs){return lhs*=rhs;}
+    template<typename T>
+    Polynomial<T> operator*(Polynomial<T> lhs,T rhs){return lhs*=rhs;}
+    template<typename T>
+    Polynomial<T> operator*(T lhs,Polynomial<T> rhs){return rhs*=lhs;}
 
     template<typename T>
     template<typename Detail>
@@ -78,6 +89,14 @@ namespace ProconLib{
     }
 
     template<typename T>
+    Polynomial<T>& operator*=(Polynomial<T> &lhs,T rhs){
+        for(int i=0;i<=lhs.degree();i++){
+            lhs[i]*=rhs;
+        }
+        return lhs;
+    }
+
+    template<typename T>
     Polynomial<T> operator+(Polynomial<T> poly){
         auto res=poly;
         return res;
@@ -91,14 +110,15 @@ namespace ProconLib{
     }
 
     template<typename T>
-    T operator()(Polynomial<T> poly,T x){
+    T Polynomial<T>::operator()(T x){
         T res=T(0);
         T px=T(1);
-        for(int i=0;i<=poly.degree();i++){
-            res+=poly[i]*px;
+        for(int i=0;i<=degree();i++){
+            res+=dat[i]*px;
             px*=x;
         }
         return res;
     }
+
 
 }

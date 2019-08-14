@@ -54,3 +54,5 @@ for line in target_lines:
     res+=expand(line)
 
 print(res)
+
+sys.stderr.write("Successfully completed.\n")

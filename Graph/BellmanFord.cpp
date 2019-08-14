@@ -20,7 +20,7 @@ namespace ProconLib{
                 for(int j=0;j<g[i].size();j++){
                     int to=g[i][j].to;
                     cost_t w=d[i]+g[i][j].cost;
-                    if(d[to]>w){
+                    if(d[i]<INF && d[to]>w){
                         update=true;
                         d[to]=w;
                     }
