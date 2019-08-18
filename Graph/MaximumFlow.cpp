@@ -11,6 +11,7 @@ namespace ProconLib{
 
     template<typename cap_t=long long,cap_t INF=cap_t(1e9+9)>
     class MaximumFlow:protected FlowImpl<cap_t,INF,EdgeForMaximumFlow<cap_t>>{
+        protected:
         using Edge=EdgeForMaximumFlow<cap_t>;
         using Super=FlowImpl<cap_t,INF,Edge>;
         using Super::N;

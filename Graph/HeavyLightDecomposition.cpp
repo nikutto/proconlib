@@ -88,7 +88,7 @@ namespace ProconLib {
 		};
 		struct Query {
 			static void VertexQuery(DataStructure& ds, int pos);
-			static void RangeUpdate(DataStructure& ds, int l, int r);
+			static void RangeQuery(DataStructure& ds, int l, int r);
 		};
 	};
 

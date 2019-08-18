@@ -17,6 +17,8 @@ namespace ProconLib{
 
     //Default: downward convex
     //i.e. given x, return max(a[i]x+b[i])
+    //add and get must be monotone.
+    //i.e. l.a0<=l.a1<=... and x0<=x1<=..
     template<typename T,typename Comp=std::less<T>>
     class ConvexHullTrick{
         std::vector<L<T>> lines;
@@ -37,6 +39,7 @@ namespace ProconLib{
             return L<T>::f(lines[head],x);
         }
     };
+    
     template<typename T,typename Comp>
     void build(ConvexHullTrick<T,Comp>& cht,std::vector<L<T>> vec){
         sort(vec.begin(),vec.end(),Comp);

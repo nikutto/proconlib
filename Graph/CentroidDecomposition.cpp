@@ -19,6 +19,25 @@ namespace ProconLib{
         std::vector<std::vector<int>> getTree();
     };
 
+    
+    //Centroid Decomposition Solver Runner
+    // requirement
+    // struct Solver{
+    //      void solve(int v,vector<int>& used);
+    // }
+    template<class graph_t>
+    class CDRunner{
+        std::vector<int> used;
+        std::vector<std::vector<int>> cdGraph;
+        template<class Solver>
+        int dfsRun(int v,graph_t& g,Solver& solver);
+        public:
+        CDRunner(){};
+
+        template<class Solver>
+        void run(graph_t& g,Solver& solver);
+    };
+
     template<class graph_t>
     CentroidDecomposition<graph_t>::CentroidDecomposition(const graph_t& g):sz(g.size()),par(g.size()),isCent(g.size()){
         root=buildDFS(0,g);
@@ -81,19 +100,6 @@ namespace ProconLib{
         return tree;
     }
 
-    //Centroid Decomposition Solver Runner
-    template<class graph_t>
-    class CDRunner{
-        std::vector<int> used;
-        std::vector<std::vector<int>> cdGraph;
-        template<class Solver>
-        int dfsRun(int v,graph_t& g,Solver& solver);
-        public:
-        CDRunner(){};
-
-        template<class Solver>
-        void run(graph_t& g,Solver& solver);
-    };
 
     template<class graph_t>
     template<class Solver>
