@@ -1,6 +1,7 @@
 #include<cmath>
 #include<vector>
 #include<cassert>
+#include<numeric>
 namespace ProconLib{
 
     template<class graph_t>
@@ -37,10 +38,10 @@ namespace ProconLib{
     LCA<graph_t>::LCA(std::vector<int> roots,const graph_t &g): N(g.size()),
                                         logN(safeLog2(N)),
                                         par(logN,std::vector<int>(N)),
-                                        dep(N)
+                                        dep(N,0)
     {
+        std::iota(par[0].begin(),par[0].end(),0);
         for(auto root:roots){
-            par[0][root]=root;
             dep[root]=0;
             dfs(root,root,g);
         }
