@@ -20,6 +20,7 @@
 #include<unordered_set>
 #include<string>
 #include<bitset>
+#include<memory>
 using namespace std;
 using ll=long long;
 

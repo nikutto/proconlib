@@ -21,8 +21,8 @@ namespace ProconLib{
     };
 
     BipartiteMatching::BipartiteMatching(int N,int M):N(N),M(M),S(N+M),T(N+M+1),Super(N+M+2){
-        for(int i=0;i<N;i++) addEdge(S,X(i));
-        for(int i=0;i<M;i++) addEdge(Y(i),T);
+        for(int i=0;i<N;i++) Super::addEdge(S,X(i),1);
+        for(int i=0;i<M;i++) Super::addEdge(Y(i),T,1);
     }
     std::vector<std::pair<int,int>> BipartiteMatching::getMatches(){
         std::vector<std::pair<int,int>> res;
