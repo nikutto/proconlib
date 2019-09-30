@@ -3,62 +3,53 @@
 
 namespace ProconLib{
 
-    template<typename T>
-    struct L{
-        T a,b; //ax+b
-        L():L(0,0){}
-        L(T a,T b):a(a),b(b){}
-        static T f(L l,T x){ return l.a*x+l.b; }
-        static bool isDropMid(L l0,L l1,L l2){
-            return (l2.b-l1.b)*(l1.a-l0.a)>=(l1.b-l0.b)*(l2.a-l1.a);
-        }
-    };
-
-
-    //Default: downward convex
-    //i.e. given x, return max(a[i]x+b[i])
-    //add and get must be monotone.
-    //i.e. l.a0<=l.a1<=... and x0<=x1<=..
-    template<typename T,typename Comp=std::less<T>>
-    class ConvexHullTrick{
-        std::vector<L<T>> lines;
+    // ax+b
+    // add  : a Monotone
+    // get  : x Monotone
+    template<typename Line,typename Comp>
+    class ConvexHullTrickBase{
+        public:
+        using value_t=typename Line::value_t;
+        std::vector<Line> lines;
         int head=0;
         public:
-        ConvexHullTrick(){}
-        void add(L<T> l){
-            while(lines.size()>=2 && L<T>::isDropMid(*(lines.end()-2),lines.back(),l)){
-                lines.pop_back();
-                if(head>lines.size()) head=lines.size();
-            }
+        void add(Line l);
+        Line get(value_t x);
+    }; 
+
+    template<typename Line,typename Comp>
+    void ConvexHullTrickBase<Line,Comp>::add(Line l){
+        if(lines.empty()){
             lines.push_back(l);
+            return;
         }
-        T get(T x){
-            while(head+1<lines.size() && Comp()(L<T>::f(lines[head],x),L<T>::f(lines[head+1],x))){
-                head++;
-            }
-            return L<T>::f(lines[head],x);
+        assert(Comp()(lines.back().a,l.a) || lines.back().a==l.a);
+        if(lines.back().a==l.a){
+            if(Comp()(lines.back().b,l.b)) lines.pop_back();
+            else return;
+        }
+        while(lines.size()>=2 && Line::isDropMid(*(lines.end()-2),*(lines.end()-1),l)) lines.pop_back();
+        lines.push_back(l);        
+        head=min(head,(int)(lines.size())-1);
+    }
+
+    template<typename Line,typename Comp>
+    Line ConvexHullTrickBase<Line,Comp>::get(value_t x){
+        while(head+1<lines.size() && Comp()(lines[head].f(x),lines[head+1].f(x))) head++;
+        return lines[head];
+    }
+
+    template<typename _value_t>
+    struct L{
+        using value_t=_value_t;
+        value_t a,b;
+        value_t f(value_t x){return a*x+b;}
+        L(value_t a,value_t b):a(a),b(b){}
+        static bool isDropMid(L<value_t> l0,L<value_t> l1,L<value_t> l2){
+            return -(l1.b-l0.b)*(l2.a-l1.a)>=-(l2.b-l1.b)*(l1.a-l0.a);
         }
     };
-    
-    template<typename T,typename Comp>
-    void build(ConvexHullTrick<T,Comp>& cht,std::vector<L<T>> vec){
-        sort(vec.begin(),vec.end(),Comp);
-        for(auto l:vec) cht.add(l);
-    }
-}
 
-/*verify mytest
-using namespace ProconLib;
-int main(){
-    ConvexHullTrick<int> cht;
-    cht.add(L<int>(0,0));
-    cht.add(L<int>(1,0));
-    cht.add(L<int>(2,-1));
-    cht.add(L<int>(4,-8));
-    for(int i=0;i<=5;i++){
-        int res=cht.get(i);
-        cout<<"#"<<i<<" "<<res<<endl;
-    }
-    return 0;
-}
-*/
+    template<typename value_t,typename Comp>
+    using ConvexHullTrick=ConvexHullTrickBase<L<value_t>,Comp>;
+};
