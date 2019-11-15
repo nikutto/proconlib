@@ -1,7 +1,7 @@
 #include<complex>
 namespace Geometry{
     using namespace std;
-    using ld=long double;
+    using ld=double;
     using Point=complex<ld>;
 
     struct Line{

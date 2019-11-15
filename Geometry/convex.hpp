@@ -1,9 +1,10 @@
-#include "geometry.hpp"
+#include"geometry.hpp"
 #include<vector>
 #include<algorithm>
 
 namespace Geometry{
-    vector<Point> convexFull(const vector<Point>& ps){
+    vector<Point> convexFull(const vector<Point>& _ps){
+        vector<Point> ps=_ps;
         int n=ps.size();
         if(n<=1) return ps;
         auto cmp=[](const Point &lhs,const Point &rhs){
